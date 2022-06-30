@@ -1,0 +1,13 @@
+{
+    "folders": [
+        {
+            "path": "..\\..\\..\\..\\Users\\User\\Downloads\\2022_PHP_FrontEnd-master"
+        },
+        {
+            "path": "..\\.."
+        }
+    ],
+    "settings": {
+        "liveServer.settings.multiRootWorkspaceName": "htdocs"
+    }
+}
