@@ -40,7 +40,11 @@ body {
   background-color: #f5f5f5;
   color: var(--main-text-gray);
 }
-
+.nav-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .wrap {
   display: grid;
   grid-template-columns: 20% 80%;
@@ -338,6 +342,7 @@ body.dark {
   margin-top: 5px;
   list-style: none;
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 .sidebar li .icon {
@@ -408,12 +413,14 @@ body.dark .sidebar header .toggle {
 .sidebar li a {
   width: 100%;
   height: 100%;
+  padding: 0 20px;
   display: flex;
   align-items: center;
   text-decoration: none;
   transition: var(--tran-04);
+  color: var(--text-white);
   border-radius: 6px;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .sidebar li a:hover {
   background: var(--primary-color);

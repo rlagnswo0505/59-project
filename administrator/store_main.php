@@ -185,10 +185,10 @@ $sales_time_arr = explode(",", $sales_time);
                     <?= 로그아웃($login_email) ?>
                 </li>
                 <li class="mode">
-                    <div class="moon-sun">
+                    <!-- <div class="moon-sun">
                         <i class='bx bx-moon icon moon'></i>
                         <i class='bx bx-sun icon sun'></i>
-                    </div>
+                    </div> -->
                     <span class="mode-text">Dark Mode</span>
                     <div class="toggle-switch">
                         <span class="switch"></span>
