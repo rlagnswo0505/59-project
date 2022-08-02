@@ -1,14 +1,14 @@
-@import 'reset.css';
-@import '../css/variables.css';
-@import '../css/components/image-input.css';
-@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+@import "reset.css";
+@import "../css/variables.css";
+@import "../css/components/image-input.css";
+@import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   list-style: none;
   box-sizing: border-box;
-  font-family: 'Do Hyeon', sans-serif;
+  font-family: "Do Hyeon", sans-serif;
 }
 :root {
   /* ====== Mobile Colors ====== */
@@ -40,7 +40,11 @@ body {
   background-color: #f5f5f5;
   color: var(--main-text-gray);
 }
-
+.nav-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .wrap {
   display: grid;
   grid-template-columns: 20% 80%;
@@ -89,7 +93,7 @@ body {
   border-radius: 50%;
   text-align: center;
   line-height: 42px;
-  font-family: 'Shrikhand', cursive;
+  font-family: "Shrikhand", cursive;
   color: #fff;
   font-size: 18px;
 }
@@ -104,7 +108,7 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  content: '';
+  content: "";
   display: block;
 }
 .main__title {
@@ -253,10 +257,10 @@ textarea {
 /* ---------------------------- nav 바 ---------------------------- */
 
 /* Google Font Import - Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 * {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -322,7 +326,7 @@ body.dark {
   opacity: 1;
 }
 .sidebar.close .text {
-  opacity: 0;
+  display: none;
 }
 .sidebar .image_bg .image {
   width: 80%;
@@ -338,6 +342,7 @@ body.dark {
   margin-top: 5px;
   list-style: none;
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 .sidebar li .icon {
@@ -408,11 +413,14 @@ body.dark .sidebar header .toggle {
 .sidebar li a {
   width: 100%;
   height: 100%;
+  padding: 0 20px;
   display: flex;
   align-items: center;
   text-decoration: none;
   transition: var(--tran-04);
+  color: var(--text-white);
   border-radius: 6px;
+  justify-content: space-between;
 }
 .sidebar li a:hover {
   background: var(--primary-color);
@@ -474,7 +482,7 @@ body.dark .menu-bar .mode i.moon {
   background: var(--toggle-color);
 }
 .switch::before {
-  content: '';
+  content: "";
   position: absolute;
   height: 15px;
   width: 15px;
@@ -637,22 +645,21 @@ body.dark .switch::before {
 .main__header {
   font-size: 20px;
 }
-.main__header strong{
+.main__header strong {
   color: var(--main-pink);
   font-size: 40px;
 }
 
 /* 가게 이미지 관련 */
 
-.card__store__time {  
+.card__store__time {
   height: 430px;
   justify-content: space-evenly;
 }
 
-.store_time{
+.store_time {
   display: flex;
   height: 100%;
-  
 }
 
 .form_store_time {
@@ -670,13 +677,18 @@ body.dark .switch::before {
   justify-content: center;
 }
 
-.store_time_item_ctnt_top{
+.store_time_item_ctnt_top {
   display: flex;
   align-items: center;
 }
 
-.store_time_item_ctnt_bottom{
+.store_time_item_ctnt_bottom {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.fa-solid {
+  color: var(--main-pink);
+  font-size: x-large;
 }

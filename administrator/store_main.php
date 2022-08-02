@@ -110,6 +110,7 @@ $sales_time_arr = explode(",", $sales_time);
 </head>
 
 <body>
+    
     <nav class="sidebar">
         <header>
             <div class="image-text">
@@ -124,81 +125,70 @@ $sales_time_arr = explode(",", $sales_time);
 
                 <ul class="menu-links">
                     <li class="nav-link">
-                        <a href="#store_notice">
-                            <i class='bx bx-home-alt icon'></i>
+                        <a href="#store_notice" class="fa-solid fa-bell">                            
                             <span class="text nav-text">공지 한마디</span>
+                            
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="#store_info">
-                            <i class='bx bx-bar-chart-alt-2 icon'></i>
+                        <a href="#store_info" class="fa-solid fa-store">                        
                             <span class="text nav-text">가게 소개</span>
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="#store_img">
-                            <i class='bx bx-bell icon'></i>
+                        <a href="#store_img" class="fa-solid fa-image">                       
                             <span class="text nav-text">가게 이미지</span>
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="#store_week">
-                            <i class='bx bx-pie-chart-alt icon'></i>
+                        <a href="#store_week" class="fa-solid fa-calendar-week">
                             <span class="text nav-text">영업 요일</span>
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="#store_time">
-                            <i class='bx bx-heart icon'></i>
+                        <a href="#store_time" class="fa-solid fa-stopwatch">
                             <span class="text nav-text">영업 시간</span>
                         </a>
                     </li>
 
                     <li class="nav-link">
-                        <a href="#store_menu_input">
-                            <i class='bx bx-wallet icon'></i>
+                        <a href="#store_menu_input" class="fa-solid fa-square-caret-down">
                             <span class="text nav-text">메뉴 등록</span>
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="#store_menu_edit">
-                            <i class='bx bx-wallet icon'></i>
+                        <a href="#store_menu_edit" class="fa-solid fa-pen-to-square">
                             <span class="text nav-text">메뉴 편집</span>
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-wallet icon'></i>
+                        <a href="#"  class="fa-solid fa-truck">
                             <span class="text nav-text">주문내역</span>
                         </a>
                     </li>
-                    <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-wallet icon'></i>
+                    <!-- <li class="nav-link">
+                        <a href="#" class="fa-solid fa-calculator">
                             <span class="text nav-text">정산내역</span>
                         </a>
-                    </li>
-                    <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-wallet icon'></i>
+                    </li> -->
+                    <!-- <li class="nav-link">
+                        <a href="#"  class="fa-solid fa-bell">                        
                             <span class="text nav-text">쿠폰</span>
-
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
             <!-- 로그아웃 버튼 -->
             <div class="bottom-content">
 
-                <li class="">
+                <li class="nav-link">     
                     <?= 로그아웃($login_email) ?>
-                    </a>
                 </li>
                 <li class="mode">
-                    <div class="moon-sun">
+                    <!-- <div class="moon-sun">
                         <i class='bx bx-moon icon moon'></i>
                         <i class='bx bx-sun icon sun'></i>
-                    </div>
+                    </div> -->
                     <span class="mode-text">Dark Mode</span>
                     <div class="toggle-switch">
                         <span class="switch"></span>
@@ -392,6 +382,7 @@ $sales_time_arr = explode(",", $sales_time);
                             </div>
                         </div>
                     </li> 
+                    <i class='bx bx-home-alt icon'></i>
                     <!-- 공지 -->
                     <li class="listing-card__item">
                         <?= 공지($card_name6, $store_notice) ?>

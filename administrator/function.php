@@ -204,8 +204,7 @@ function 로그아웃($login_email)
 {
     if (isset($login_email)) {
         echo "
-    <a href='store_logout.php'>
-    <i class='bx bx-log-out icon'></i>    
+    <a href='store_logout.php' class='fa-solid fa-arrow-right-from-bracket'>    
     <span class='text nav-text'>로그아웃</span>
     </a>
     ";
@@ -249,17 +248,11 @@ function 가게소개($card_name1, $store_info)
 
 function 가게이미지($card_name3, $store_name)
 {
-    // echo "<form class='img_test' id='store_img' action='store_photo.php' method='post' enctype='multipart/form-data'>
-    //     <div class='listing-card__img'>";
+
     echo "<form class='img_test image-form' id='store_img' action='store_photo.php' method='post' enctype='multipart/form-data'>";
     card_top($card_name3);
     $error_img = 'this.src="https://cdn.pixabay.com/photo/2020/04/17/19/48/city-5056657_960_720.png"';
-    // echo "<div class='image-input'>
-    //       <div class='image-input__input-wrapper' id='inputWrapper'><label><input type='file' id='imageInput'  name='img' accept='image/*'></label></div>
-    //                         <div class='image-input__pseudo'>
-    //                         <div><i class='fa-solid fa-plus'></i></div>
-    //                         <div>이미지 넣기</div>
-    //                         </div>";
+
     echo "<div class='image-input'>
     <div class='image-input__input-wrapper' id='inputWrapper'><input type='file' id='imageInput' name='img' accept='image/*' class='ui-input image-input__input' tabindex='0'>
         <div class='image-input__pseudo'>
@@ -268,12 +261,7 @@ function 가게이미지($card_name3, $store_name)
         </div>";
     $session_img = $_SESSION['login_store']['store_photo'];
     $store_img = $session_img == null ? 'https://cdn.pixabay.com/photo/2020/04/17/19/48/city-5056657_960_720.png' : '../img/store/' . $store_name . '/Main_img/' . $session_img;
-    //     echo "<div class='store__img'>                                    
-    //     <img src='$store_img' onerror= '$error_img'>
-    // </div>
-    // </div>
-    // </div>
-    // </form>"
+
     echo "
         </div>
     </div>
