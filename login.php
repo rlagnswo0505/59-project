@@ -47,7 +47,7 @@
                 <div>
                     <a href="">
                         <div class="kakao_login">
-                            <img src="/59-PROJECT/img/kakao_logo.png">
+                            <img src="./img/kakao_logo.png">
                             <div>카카오로 로그인</div>
                         </div>
                     </a>
@@ -56,7 +56,7 @@
                 <div>
                     <a href="">
                         <div class="naver_login">
-                            <img src="/59-PROJECT/img/naver_logo.png">
+                            <img src="./img/naver_logo.png">
                             <div>네이버로 로그인</div>
                         </div>
                     </a>
