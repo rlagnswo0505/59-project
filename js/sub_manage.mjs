@@ -32,7 +32,7 @@ function printTotalSave(m = 0, moved = 0) {
       <div class='total-save-price__left' onclick="moveMonth(0,${monthSave.keys.length})"><</div>
       <div class='total-save-price__this-month' >${monthSave.keys[key]}</div>
       <div class='total-save-price__right' onclick="moveMonth(1,${monthSave.keys.length})">></div>
-    <div class='total-save-price__month-save'>월 할인금액  ${monthSave[monthSave.keys[key]]}원</div>
+    <div class='total-save-price__month-save'>월 할인금액  ${commaNum(monthSave[monthSave.keys[key]])}원</div>
  
   `;
 }
@@ -57,8 +57,8 @@ function printSubList() {
 <div class='sub-list__menu-nm'>${list[i].menu_nm}</div>
 <div class='sub-list__remaining-count'>사용가능 회수 ${list[i].remaining_count}회</div>
 <div class='sub-list__validity'>${validity}</div>
-<div class='sub-list__price'>${list[i].subed_price}원</div>
-<div class='sub-list__save-price'>총 할인금액 ${list[i].save_price}원</div>
+<div class='sub-list__price'>${commaNum(list[i].subed_price)}원</div>
+<div class='sub-list__save-price'>총 할인금액 ${commaNum(list[i].save_price)}원</div>
 <div class='sub-list__button'>
 <div class='sub-list__detail' onclick="moveToStoreDetail(${list[i].store_num})">상세페이지</div>
 <div class='sub-list__reservation' onclick="moveToReservation(${i})">예약하기</div>

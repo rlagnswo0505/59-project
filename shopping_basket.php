@@ -22,6 +22,7 @@ if (isset($_SESSION['login_user'])) {
 
 
 ?>
+<script src="js/utils.js"></script>
 <script src="js/shopping_basket.js"></script>
 <script>
     let menuNum = <?= isset($_POST['menu_num']) ? $_POST['menu_num'] : 0 ?>;
