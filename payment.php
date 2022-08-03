@@ -75,10 +75,10 @@ if (isset($_SESSION['login_user'])) {
 </body>
 
 </html>
-
+<script src="js/utils.js"></script>
 <script>
     let totalPrice = sessionStorage['totalPrice'];
-    document.querySelector('.payment__button').textContent = `${totalPrice}원 결제하기`;
+    document.querySelector('.payment__button').textContent = `${commaNum(totalPrice)}원 결제하기`;
     document.querySelectorAll('.not-ready').forEach(e => e.onclick = goPayment);
     document.querySelector('.payment__button').onclick = goPayment;
 

@@ -89,6 +89,7 @@ $list_json = json_encode($list);
         const list = JSON.parse('<?= $list_json ?>');
     </script>
 
+    <script src="./js/utils.js"></script>
     <script src="./js/sub_manage.mjs"></script>
 
 </body>

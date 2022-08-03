@@ -89,7 +89,6 @@ function makeResDays(n = howManyDays) {
     divDayBox.innerHTML = `<input type="radio" name="day" id="day${i}" ${checked} onclick="getTimes()" value="${fullDate}"><label for="day${i}">${pickupDate}</label>`;
     // divDayContainer.append(divDayBox);
     document.querySelector(".swiper-wrapper1").append(divDayBox);
-    // console.log(pickupDate);
   }
 }
 
@@ -97,6 +96,10 @@ makeResDays(howManyDays);
 // let checkFirstDay = true;
 let checkFirstDay = false;
 makeResTimes(howManyTimes);
+window.onload = () => {
+  document.querySelectorAll("input")[0].click();
+};
+
 
 function getTimes() {
   document.querySelector(".swiper-slide2").textContent = "";

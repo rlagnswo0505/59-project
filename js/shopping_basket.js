@@ -28,7 +28,7 @@ function makeBasketBox(list) {
                 <div class="basket__menu-nm">${menuName}</div>
                 <div class="basket__nm-price">
                     <div class="basket__store-nm">${storeName}</div>
-                    <div class="basket__price" id="sumPrice${key}">${sumPrice}원</div>
+                    <div class="basket__price" id="sumPrice${key}">${commaNum(sumPrice)}원</div>
                 </div>
                 <div class="basket__menu-count">
                   <div class="basket__margin-for-click" id='click${key}'>
@@ -43,8 +43,8 @@ function makeBasketBox(list) {
     basketContainer.append(basketBox);
 
     totalPrice += sumPrice;
-    document.getElementsByClassName("totalPrice")[0].innerText = totalPrice + "원";
-    document.getElementsByClassName("totalPrice")[1].innerText = totalPrice + "원";
+    document.getElementsByClassName("totalPrice")[0].innerText = commaNum(totalPrice) + "원";
+    document.getElementsByClassName("totalPrice")[1].innerText = commaNum(totalPrice) + "원";
     sessionStorage["totalPrice"] = totalPrice;
     let countMinus = document.querySelector(`#minus${key}`);
     countMinus.addEventListener("click", function (e) {
@@ -87,10 +87,10 @@ function changeCount(key, pm) {
 
   let sumPrice = prices[key] * sessionStorage.getItem(key);
   if (sumPrice != 0) {
-    document.getElementById(`sumPrice${key}`).innerText = sumPrice;
+    document.getElementById(`sumPrice${key}`).innerText = commaNum(sumPrice) + "원";
   }
-  document.getElementsByClassName("totalPrice")[0].innerText = totalPrice + "원";
-  document.getElementsByClassName("totalPrice")[1].innerText = totalPrice + "원";
+  document.getElementsByClassName("totalPrice")[0].innerText = commaNum(totalPrice) + "원";
+  document.getElementsByClassName("totalPrice")[1].innerText = commaNum(totalPrice) + "원";
   sessionStorage["totalPrice"] = totalPrice;
   checkBoxCount();
 }
