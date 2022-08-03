@@ -17,7 +17,6 @@ function check_reserve_for_store(store_num) {
 }
 
 function whenNewReservation(nowRes) {
-  console.log(nowRes);
   if (confirm("예약 요청이 들어왔습니다")) {
     goPostValue(nowRes);
   }
