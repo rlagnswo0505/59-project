@@ -337,6 +337,30 @@ function accept($sub_num){
     mysqli_close($conn);
     return $result;
 }
+function accept2($sub_num){
+    $sql = 
+    "   UPDATE t_usedsub
+        SET status = 1
+        where sub_num = $sub_num
+    ";
+    $conn = get_conn();
+    $result = mysqli_query($conn, $sql);    
+    mysqli_close($conn);
+    return $result;
+}
+
+function remaining_count($remain_count, $sub_num){
+    $count = $remain_count - 1;
+    $sql = 
+    "   UPDATE t_sub
+        SET remaining_count = $count
+        where sub_num = $sub_num;
+    ";
+    $conn = get_conn();
+    $result = mysqli_query($conn, $sql);    
+    mysqli_close($conn);
+    return $result;
+}
 
 function not_reserve($user_num, $store_nm,$menu_nm, $not_type,$not_url,$not_read_check){
     $sql = 

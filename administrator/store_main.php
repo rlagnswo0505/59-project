@@ -481,6 +481,7 @@ $sales_time_arr = explode(",", $sales_time);
                                                     $cd_sub_status = $item['cd_sub_status'];
                                                     $menu_nm = $item['menu_nm'];
                                                     $store_nm = $item['store_nm'];
+                                                    $status = $item['status'];
                                                     $user_nm = reserve_menu3($user_num);
                                                     $cd_unit_int = reserve_menu4($user_num);
                                                     $cd_unit_int==1 ? $cd_unit = "회" : $cd_unit = "개";
@@ -489,18 +490,18 @@ $sales_time_arr = explode(",", $sales_time);
                                                     echo "  <div class='store_time_item'> $user_nm 님</div>
                                                             <div class='store_time_item_ctnt'> <span class='store_time_item_ctnt_top'>예약 시간 $reserve_at </span>
                                                                 <form class='form_store_time store_time_item' action='store_menu_reserve.php' method='post'>
+                                                                    <input name='sub_num' value='$sub_num' style='display:none;'></input>
                                                                     <input name='user_num' value='$user_num' style='display:none;'></input>
                                                                     <input name='store_nm' value='$store_nm' style='display:none;'></input>
                                                                     <input name='menu_nm' value='$menu_nm' style='display:none;'></input>
                                                                     <input name='not_type' value='0' style='display:none;'></input>
                                                                     <input name='menu_num' value='$menu_num' style='display:none;'></input>
-                                                                    <input name='not_read_check' value='1' style='display:none;'></input>
-                                                                    <button class='btn' >취소</button>
-                                                                    <button class='btn'>접수</button>
-                                                                </form>
-                                                                
-                                                            
-                                                                </div><div class='store_time_item store_time_item_ctnt_bottom'>구독 메뉴 $menu_nm 총 $remain_count$cd_unit 남음 </div>  <hr>";
+                                                                    <input name='remain_count' value='$remain_count' style='display:none;'></input>
+                                                                    <input name='not_read_check' value='1' style='display:none;'></input>";
+                                                                    if($status == 0){
+                                                                       echo "<button class='btn'>접수</button>";
+                                                                    }
+                                                            echo "</form></div><div class='store_time_item store_time_item_ctnt_bottom'>구독 메뉴 $menu_nm 총 $remain_count$cd_unit 남음 </div>  <hr>";
                                                     }
                                                 }
                                                 

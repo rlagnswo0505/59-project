@@ -2,7 +2,6 @@
 
 $now_res = json_decode($_POST['nowResJson'], true);
 
-print_r($now_res);
 include_once('db/db_sub.php');
 $param = [
     'sub_num' => $now_res[0]['sub_num'],
