@@ -8,7 +8,7 @@ session_start();
 $login = $_SESSION['login_store'];
 
 if (!isset($login)) {
-    header("location: store_login.php");
+    header("location: ../owner_login.php");
 }
 $login_email = $login['store_email'];
 $store_num = $login['store_num'];
@@ -85,7 +85,7 @@ $sales_day_arr = explode(" ", $store_sales_day);
 $sales_time_arr = explode(",", $sales_time);
 
 
-//test
+
 
 ?>
 
@@ -162,7 +162,7 @@ $sales_time_arr = explode(",", $sales_time);
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="#"  class="fa-solid fa-truck">
+                        <a href="#store_menu_reservation"  class="fa-solid fa-truck">
                             <span class="text nav-text">주문내역</span>
                         </a>
                     </li>
@@ -185,10 +185,10 @@ $sales_time_arr = explode(",", $sales_time);
                     <?= 로그아웃($login_email) ?>
                 </li>
                 <li class="mode">
-                    <!-- <div class="moon-sun">
+                    <div class="moon-sun">
                         <i class='bx bx-moon icon moon'></i>
                         <i class='bx bx-sun icon sun'></i>
-                    </div> -->
+                    </div>
                     <span class="mode-text">Dark Mode</span>
                     <div class="toggle-switch">
                         <span class="switch"></span>
@@ -437,7 +437,7 @@ $sales_time_arr = explode(",", $sales_time);
                             $cd_unit = $item['cd_unit'];
                             $menu_intro = $item['menu_intro'];
                             $menu_photo = $item['menu_photo'];
-                            $menu_img =  "../img/store/" . $store_name . "/Menu_img/" . $menu_photo;
+                            $menu_img =  "../img/store/" . $store_name . "/Menu_img/" . "/" . $menu_num . "/".$menu_photo;
                             $adr = "this.src='https://cdn.pixabay.com/photo/2015/12/22/04/00/photo-1103594_960_720.png'";
 
 
@@ -464,7 +464,7 @@ $sales_time_arr = explode(",", $sales_time);
                     <li class="listing-card__item">
 
                         <div class='listing-card__info'>
-                            <div class='listing-card__info--top'></div>
+                            <div class='listing-card__info--top' id='store_menu_reservation'></div>
                                 <strong class='listing-card__name'> 주문 현황 > </strong>
                                     
                                     <?php
@@ -474,26 +474,34 @@ $sales_time_arr = explode(",", $sales_time);
                                                 if(isset($item['subed_count']) && isset($item['reservation_date'])){
                                                     
                                                     $remain_count = $item['remaining_count'];
-                                                    $reserve_at = substr($item['reservation_date'],11,5);                                                        
+                                                    $reserve_at = substr($item['reservation_date'],11,5);
                                                     $menu_num = $item['menu_num'];
                                                     $user_num = $item['user_num'];
                                                     $sub_num = $item['sub_num'];
                                                     $cd_sub_status = $item['cd_sub_status'];
-                                                    $menu_nm = reserve_menu2($menu_num);
+                                                    $menu_nm = $item['menu_nm'];
+                                                    $store_nm = $item['store_nm'];
+                                                    $status = $item['status'];
                                                     $user_nm = reserve_menu3($user_num);
                                                     $cd_unit_int = reserve_menu4($user_num);
                                                     $cd_unit_int==1 ? $cd_unit = "회" : $cd_unit = "개";
-                                                    if($cd_sub_status==0){
+                                                    
+                                                    if($cd_sub_status == 1){
                                                     echo "  <div class='store_time_item'> $user_nm 님</div>
                                                             <div class='store_time_item_ctnt'> <span class='store_time_item_ctnt_top'>예약 시간 $reserve_at </span>
                                                                 <form class='form_store_time store_time_item' action='store_menu_reserve.php' method='post'>
-                                                                    <input name='reserve' value='$sub_num' style='display:none;'></input>
-                                                                    <button class='btn' >취소</button>
-                                                                    <button class='btn' onclick='<script>clickReserve()</script>'>접수</button>
-                                                                </form>
-                                                                
-                                                            
-                                                                </div><div class='store_time_item store_time_item_ctnt_bottom'>구독 메뉴 $menu_nm 총 $remain_count$cd_unit 남음 </div>  <hr>";
+                                                                    <input name='sub_num' value='$sub_num' style='display:none;'></input>
+                                                                    <input name='user_num' value='$user_num' style='display:none;'></input>
+                                                                    <input name='store_nm' value='$store_nm' style='display:none;'></input>
+                                                                    <input name='menu_nm' value='$menu_nm' style='display:none;'></input>
+                                                                    <input name='not_type' value='0' style='display:none;'></input>
+                                                                    <input name='menu_num' value='$menu_num' style='display:none;'></input>
+                                                                    <input name='remain_count' value='$remain_count' style='display:none;'></input>
+                                                                    <input name='not_read_check' value='1' style='display:none;'></input>";
+                                                                    if($status == 0){
+                                                                       echo "<button class='btn'>접수</button>";
+                                                                    }
+                                                            echo "</form></div><div class='store_time_item store_time_item_ctnt_bottom'>구독 메뉴 $menu_nm 총 $remain_count$cd_unit 남음 </div>  <hr>";
                                                     }
                                                 }
                                                 
@@ -526,7 +534,7 @@ $sales_time_arr = explode(",", $sales_time);
         </div>
     </section>
 
-    <script src="https://kit.fontawesome.com/6a1759ba21.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/6a1759ba21.js" crossorigin="anonymous"></script> 
     <script src="store.js"></script>
     <script src="../image-input/image-input.js"></script>
 </body>
