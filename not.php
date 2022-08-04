@@ -95,7 +95,7 @@ if(!$login_user)
                     <a>
                 </div>
                 <?php }
-                    if($item['not_type'] == 9)
+                    if($item['not_type'] == 7)
                     { ?>
                     <div class = "not_box">
                     <a href="readcheck_proc.php?not_num=<?=$item['not_num']?>">

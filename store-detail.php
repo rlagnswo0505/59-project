@@ -162,7 +162,7 @@ $cate = '';
                                             <div class="menu-info__count">월 <?= $menu['subed_count'] ?>회</div>
                                         </div>
                                     </div>
-                                    <h2 class="menu--price"><?= $menu['subed_price'] ?>원</h2>
+                                    <h2 class="menu--price"><?=number_format( $menu['subed_price']) ?>원</h2>
                                 </div>
                             <?php }; ?>
                         </div>

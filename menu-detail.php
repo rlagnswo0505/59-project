@@ -92,6 +92,8 @@ if ($menu['cd_unit'] == 2) {
         </main>
         <!-- footer 인클루드해서 사용 -->
     </div>
+    <script src="./js/utils.js">
+    </script>
     <script>
         const valueButtons = document.querySelectorAll('.value-button');
         const price = document.querySelector('.menu--price');
@@ -100,12 +102,12 @@ if ($menu['cd_unit'] == 2) {
         valueButtons.forEach((button) => {
             button.addEventListener('click', () => {
                 const inputValue = inputNum.value;
-                price.innerText = inputValue * <?= $menu['price'] ?>;
-                subPrice.innerText = `${inputValue * <?= $menu['subed_price'] ?>}원`;
+                price.innerText = commaNum(inputValue * <?= $menu['price'] ?>);
+                subPrice.innerText = `${ commaNum(inputValue * <?= $menu['subed_price'] ?>)}원`;
             })
         })
-        price.innerText = inputNum.value * <?= $menu['price'] ?>;
-        subPrice.innerText = `${inputNum.value * <?= $menu['subed_price'] ?>}원`;
+        price.innerText = commaNum(inputNum.value * <?= $menu['price'] ?>);
+        subPrice.innerText = `${commaNum(inputNum.value * <?= $menu['subed_price'] ?>)}원`;
     </script>
 </body>
 

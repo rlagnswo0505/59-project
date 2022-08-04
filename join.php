@@ -56,8 +56,8 @@ if (isset($_GET['user_num'])) {
         </header>
         <!-- main -->
         <main>
-            <div class="form_box">
-                <form name="frm" action="<?= $join ?>" method="post">
+            <div class="form_box ">
+                <form name="frm" class="joinBox action="<?= $join ?>" method="post">
                     <div class="join_email">
                         <label for="email">
                             이메일주소</label>
@@ -73,7 +73,7 @@ if (isset($_GET['user_num'])) {
                         <label for="">
                             비밀번호 확인 </label>
                         <input type="password" id="user_check_pw" name="user_check_pw" placeholder="영문,숫자,특수문자 포함 8자리 이상">
-                        <p class="warning_massage"><?= $wp ?></p>
+                        <p class="warning_massage w310"><?= $wp ?></p>
                     </div>
 
                     <div class="join_nkname">
@@ -81,7 +81,7 @@ if (isset($_GET['user_num'])) {
                             닉네임</label>
                         <input type="text" name="nickname" placeholder="닉네임 입력" value=<?= $uk ?>>
                         <!-- required oninvalid="this.setCustomValidity('닉네임을 입력해주세요.')" oninput="setCustomValidity('')"> -->
-                        <p class="warning_massage"><?= $wk ?></p>
+                        <p class="warning_massage w300"><?= $wk ?></p>
                     </div>
 
                     <div class="join_nm">

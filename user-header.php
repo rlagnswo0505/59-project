@@ -44,7 +44,7 @@ $unread_not = check_not($param);
     <div class="nav--notice">
         <a href="not.php">
             <i class="fa-regular fa-bell"></i>
-            <?php if(isset($_GET['user_num']) && isset($_SESSION['login_user']) && $unread_not !== '0') {
+            <?php if(isset($_SESSION['login_user']) && $unread_not !== '0') {
             echo "<div class = 'red_circle'></div>";
             } ?>
         </a>

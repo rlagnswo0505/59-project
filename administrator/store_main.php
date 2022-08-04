@@ -437,7 +437,7 @@ $sales_time_arr = explode(",", $sales_time);
                             $cd_unit = $item['cd_unit'];
                             $menu_intro = $item['menu_intro'];
                             $menu_photo = $item['menu_photo'];
-                            $menu_img =  "../img/store/" . $store_name . "/Menu_img/" . "/" . $menu_num . "/".$menu_photo;
+                            $menu_img =  "../img/store/" . $store_name . "/Menu_img/"  . $menu_num . "/".$menu_photo;
                             $adr = "this.src='https://cdn.pixabay.com/photo/2015/12/22/04/00/photo-1103594_960_720.png'";
 
 
@@ -497,7 +497,7 @@ $sales_time_arr = explode(",", $sales_time);
                                                                     <input name='not_type' value='0' style='display:none;'></input>
                                                                     <input name='menu_num' value='$menu_num' style='display:none;'></input>
                                                                     <input name='remain_count' value='$remain_count' style='display:none;'></input>
-                                                                    <input name='not_read_check' value='1' style='display:none;'></input>";
+                                                                    <input name='not_read_check' value='0' style='display:none;'></input>";
                                                                     if($status == 0){
                                                                        echo "<button class='btn'>접수</button>";
                                                                     }
@@ -537,6 +537,7 @@ $sales_time_arr = explode(",", $sales_time);
     <script src="https://kit.fontawesome.com/6a1759ba21.js" crossorigin="anonymous"></script> 
     <script src="store.js"></script>
     <script src="../image-input/image-input.js"></script>
+
 </body>
 
 </html>
