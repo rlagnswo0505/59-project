@@ -266,12 +266,16 @@ function menu_num_load_edit(){
 
 function reserve_menu(&$store_num){    
     $sql = 
-    "   SELECT *
-        FROM t_sub A
-        INNER JOIN t_usedsub B
-        ON A.sub_num = B.sub_num
-        WHERE A.store_num = $store_num
-        AND B.cd_sub_status = 0
+    "   SELECT A.* , B.* , C.store_nm, D.menu_nm
+    FROM t_sub A
+    INNER JOIN t_usedsub B
+    ON A.sub_num = B.sub_num
+    INNER JOIN t_store C
+    ON A.store_num = C.store_num
+    INNER JOIN t_menu D
+    ON A.menu_num = D.menu_num
+    WHERE A.store_num = $store_num
+    AND B.cd_sub_status = 1
 
     ";
     $conn = get_conn();
@@ -333,3 +337,42 @@ function accept($sub_num){
     mysqli_close($conn);
     return $result;
 }
+function accept2($sub_num){
+    $sql = 
+    "   UPDATE t_usedsub
+        SET status = 1
+        where sub_num = $sub_num
+    ";
+    $conn = get_conn();
+    $result = mysqli_query($conn, $sql);    
+    mysqli_close($conn);
+    return $result;
+}
+
+function remaining_count($remain_count, $sub_num){
+    $count = $remain_count - 1;
+    $sql = 
+    "   UPDATE t_sub
+        SET remaining_count = $count
+        where sub_num = $sub_num;
+    ";
+    $conn = get_conn();
+    $result = mysqli_query($conn, $sql);    
+    mysqli_close($conn);
+    return $result;
+}
+
+function not_reserve($user_num, $store_nm,$menu_nm, $not_type,$not_url,$not_read_check){
+    $sql = 
+    "   INSERT INTO t_not
+            (user_num, store_nm, menu_nm, not_type, not_url, not_read_check)
+        VALUE
+            ($user_num,'$store_nm','$menu_nm',$not_type, '$not_url', $not_read_check)
+    
+    ";
+    $conn = get_conn();
+    $result = mysqli_query($conn, $sql);    
+    mysqli_close($conn);
+    return $result;
+}
+
