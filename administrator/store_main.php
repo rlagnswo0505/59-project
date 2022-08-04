@@ -529,6 +529,7 @@ $sales_time_arr = explode(",", $sales_time);
     <script src="https://kit.fontawesome.com/6a1759ba21.js" crossorigin="anonymous"></script>
     <script src="store.js"></script>
     <script src="../image-input/image-input.js"></script>
+
 </body>
 
 </html>
